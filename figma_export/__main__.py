@@ -1,6 +1,6 @@
 from inspect import signature
 from argparse import ArgumentParser
-from figma_export.exporters import exporters_by_format
+from .exporters import exporters_by_format
 
 
 def init_argument_parser():
