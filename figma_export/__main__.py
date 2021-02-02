@@ -1,6 +1,6 @@
 from inspect import signature
 from argparse import ArgumentParser
-from .exporters import exporters_by_format
+from figma_export.exporters import exporters_by_format
 
 
 def init_argument_parser():
@@ -35,6 +35,7 @@ def init_argument_parser():
 def main():
     argument_parser = init_argument_parser()
     args = argument_parser.parse_args()
+    print(args)
     document_id = args.document_id
     del args.document_id
     export_format = args.export_format

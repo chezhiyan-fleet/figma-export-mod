@@ -38,6 +38,9 @@ class ImagesetExporter(AbstractExporter):
             selector: AbstractExporter.SelectorArgument
     ):
         figma_service = FigmaService()
+
+        print("ImagesetExporter")
+
         document = figma_service.load_document(self.document_id)
         if not os.path.isdir(document.name):
             os.mkdir(document.name)
@@ -57,6 +60,7 @@ class ImagesetExporter(AbstractExporter):
 
         for result in rendering_results:
             dir_name = result.node.name + ".imageset"
+            print(dir_name)
             if not os.path.isdir(dir_name):
                 os.mkdir(dir_name)
                 with open(os.path.join(dir_name, "Contents.json"), "w") as f:

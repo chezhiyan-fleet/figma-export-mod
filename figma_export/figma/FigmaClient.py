@@ -12,11 +12,14 @@ class FigmaClient:
     def request_document_data(self, document_id: str) -> bytes:
         """Makes request to 'GET file' endpoint."""
         return self.request_data(
-            f"https://api.figma.com/v1/files/{document_id}"
+            f"https://api.figma.com/v1/files/{document_id}"+"?ids=2282:69262"
+            # f"https://api.figma.com/v1/files/{document_id}"+"?ids=2108:7396"
+            # f"https://api.figma.com/v1/files/{document_id}"+"?ids=1555:111800"
         )
 
     def request_image_urls(self, key: str, ids: List[str], scale: float, _format: str) -> bytes:
         """Makes request to 'GET image' endpoint."""
+        print(ids)
         parameters = {
             "ids": ",".join(ids),
             "scale": scale,
@@ -27,6 +30,7 @@ class FigmaClient:
         )
 
     def request_data(self, url: str) -> bytes:
+        print(url)
         request = Request(url)
         request.headers["x-figma-token"] = self.__personal_token
         response = urlopen(request)
