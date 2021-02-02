@@ -7,18 +7,10 @@ Exports components from any Figma document and saves them to files that can be e
 Allows to export your Figma components as:
 
 - Image files (```png```, ```jpg```, ```svg```).
-- Xcode Asset Catalog (```imageset``` files).
-- Iconic font (```otf```, ```ttf```, ```woff```).
 
 ## Installation
 
 - Set an environment variable ```FIGMA_ACCESS_TOKEN``` to your [personal access token](https://www.figma.com/developers/api#access-tokens).
-
-- (Optional) ```otf```, ```ttf``` and ```woff``` commands require the FontForge command-line interface. Run this command to check the FontForge installation on your local machine:
-
-```
-$ fontforge -c "print('FontForge is ready')"
-``` 
 
 
 ## Usage examples
